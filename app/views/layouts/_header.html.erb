@@ -1,8 +1,8 @@
 <header>
-  <div>
+  <div class="text-white flex justify-between">
     <%= link_to "sample app", root_path %>
     <nav>
-      <ul>
+      <ul class="flex space-x-2">
         <li><%= link_to "Home", root_path %></li>
         <% if logged_in? %>
           <li><%= link_to "Profile", current_user %></li>
