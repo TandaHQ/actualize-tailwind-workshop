@@ -17,3 +17,5 @@ $ rails db:reset db:migrate db:seed
 To start the server, run `rails server`.
 
 You can read the [seeds file](https://github.com/TandaHQ/actualize-tailwind-workshop/blob/main/db/seeds.rb) to see what other users were set up.
+
+Log in at [http://localhost:3000/login](http://localhost:3000/login) with email `example@railstutorial.org` and password `foobar`.
