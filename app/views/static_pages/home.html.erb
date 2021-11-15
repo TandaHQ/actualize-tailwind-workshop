@@ -1,17 +1,22 @@
-<div class="bg-white my-10 p-10">
+<div class="bg-gradient-to-r from-blue-200 to-green-300 my-10 p-10 rounded-xl">
   <div>
-    <section class="user_info">
-      <%= render 'shared/user_info' %>
-    </section>
-    <section class="stats">
-      <%= render 'shared/stats' %>
-    </section>
-    <section class="micropost_form">
-      <%= render 'shared/micropost_form' %>
-    </section>
   </div>
   <div>
-    <h3>Micropost Feed</h3>
+    <h3 class="fixed left-0 top-50 text-center bg-pink-500 font-mono text-4xl italic text-purple-700 rounded p-4 animate-bounce">Micropost Feed</h3>
+    <section class="user_info sticky top-0 rounded bg-gradient-to-r from-purple-500 to-pink-500 my-4 z-10">
+      <%= render 'shared/user_info' %>
+      <section class="stats">
+        <%= render 'shared/stats' %>
+      </section>
+    </section>
     <%= render 'shared/feed' %>
+    <section class="micropost_form sticky bottom-0 center rounded-full bg-gradient-to-r from-red-500 to-yellow-200 my-4 content-center">
+      <%= render 'shared/micropost_form' %>
+    </section>
+
+
+    <section class="fixed bottom-0 left-0">
+      <%= audio_tag "song.mp3", autoplay: true, controls: true %>
+    </section>
   </div>
 </div>

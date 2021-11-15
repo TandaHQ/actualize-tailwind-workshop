@@ -1,8 +1,8 @@
 <header>
   <div>
     <%= link_to "sample app", root_path %>
-    <nav>
-      <ul>
+    <nav class="fixed right-20 top-50 bg-blue-300 text-4xl animate-pulse font-mono rounded-full">
+      <ul class="justify-around my-8">
         <li><%= link_to "Home", root_path %></li>
         <% if logged_in? %>
           <li><%= link_to "Profile", current_user %></li>
