@@ -5,6 +5,8 @@ module UsersHelper
     size         = options[:size]
     gravatar_id  = Digest::MD5::hexdigest(user.email.downcase)
     gravatar_url = "https://secure.gravatar.com/avatar/#{gravatar_id}?s=#{size}"
-    image_tag(gravatar_url, alt: user.name, class: "gravatar rounded-full animate-spin")
+    css = "gravatar rounded-full h-12 w-12 flex items-center justify-center"
+    css << " animate-spin" if user == current_user
+    image_tag(gravatar_url, alt: user.name, class: css)
   end
 end
