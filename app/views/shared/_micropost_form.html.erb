@@ -1,10 +1,19 @@
-<%= form_with(model: @micropost, local: true) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-  <div class="field">
-    <%= f.text_area :content, placeholder: "Compose new micropost...", class: "bg-transparent p-5 rounded-lg border-2 border-cyan-200 text-cyan-500 w-full" %>
-  </div>
-  <%= f.submit "Post", class: "btn btn-primary" %>
-<% end %>
+<div class="mx-20">
+  <%= form_with(model: @micropost, local: true) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="flex">
+      <div>
+        <div class="field">
+          <%= f.text_area :content, placeholder: "Compose new micropost...", class: "bg-purple-300 rounded w-max focus:animate-spin" %>
+        </div>
+        <span class="image">
+          <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+        </span>
+      </div>
+      <%= f.submit "Post", class: "btn btn-primary bg-gradient-to-r from-pink-500 to-yellow-500 text-4xl mx-20 rounded-full hover:animate-spin hover:from-green-400 hover:to-blue-500 font-mono hover:spin hover:animate" %>
+    </div>
+  <% end %>
+</div>
 
 <script type="text/javascript">
   $("#micropost_image").bind("change", function() {

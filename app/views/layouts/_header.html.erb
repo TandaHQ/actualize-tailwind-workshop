@@ -1,8 +1,8 @@
 <header>
-  <div class="text-white flex justify-between">
-    <%= link_to "Sample app", root_path, class: "font-bold text-3xl" %>
-    <nav>
-      <ul class="flex space-x-2">
+  <div>
+    <%= link_to "sample app", root_path %>
+    <nav class="fixed right-20 top-50 bg-blue-300 text-4xl animate-pulse font-mono rounded-full">
+      <ul class="justify-around my-8">
         <li><%= link_to "Home", root_path %></li>
         <% if logged_in? %>
           <li><%= link_to "Profile", current_user %></li>

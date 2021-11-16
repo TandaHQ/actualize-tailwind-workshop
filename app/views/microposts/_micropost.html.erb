@@ -1,17 +1,19 @@
-<li id="micropost-<%= micropost.id %>" class="flex p-6 bg-white rounded-xl shadow-md">
-  <%= link_to gravatar_for(micropost.user, size: 50), micropost.user, class:"mr-4" %>
-  <div class="flex flex-col">
-    <span class="user font-semibold"><%= link_to micropost.user.name, micropost.user %></span>
-    <span class="content mb-1">
+<li id="micropost-<%= micropost.id %>" class="bg-gradient-to-r from-pink-500 to-yellow-500 flex my-4 rounded-lg  hover:scale-150 hover:from-green-400 hover:to-blue-500">
+  <%= link_to gravatar_for(micropost.user, size: 50), micropost.user %>
+  <div>
+    <span class="user font-extrabold"><%= link_to micropost.user.name, micropost.user %></span>
+    <span class="content">
       <%= micropost.content %>
       <%= image_tag micropost.display_image if micropost.image.attached? %>
     </span>
-    <span class="timestamp text-gray-400 text-xs">
-      Posted <%= time_ago_in_words(micropost.created_at) %> ago.
-      <% if current_user?(micropost.user) %>
-        <%= link_to "delete", micropost, method: :delete,
-                                       data: { confirm: "You sure?" } %>
-      <% end %>
-    </span>
+    <div>
+      <span class="timestamp italic hover:underline">
+        Posted <%= time_ago_in_words(micropost.created_at) %> ago.
+        <% if current_user?(micropost.user) %>
+          <%= link_to "delete", micropost, method: :delete,
+                                           data: { confirm: "You sure?" } %>
+        <% end %>
+      </span>
+    </div>
   </div>
 </li>
